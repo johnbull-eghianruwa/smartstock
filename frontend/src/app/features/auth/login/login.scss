@@ -1,0 +1,206 @@
+@use '../../../../styles/variables' as *;
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-lg;
+    background: $color-background;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    padding: $spacing-2xl;
+    background: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-md;
+}
+
+/* Brand */
+
+.login-brand {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-2xl;
+}
+
+.login-brand__logo {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $color-primary;
+    color: $color-surface;
+    border-radius: $radius-md;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.login-brand__name {
+    font-size: 20px;
+    font-weight: 700;
+    color: $color-text-primary;
+}
+
+/* Header */
+
+.login-header {
+    margin-bottom: $spacing-xl;
+}
+
+.login-header h1 {
+    margin: 0 0 $spacing-sm;
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: $color-text-primary;
+}
+
+.login-header p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
+    color: $color-text-secondary;
+}
+
+/* Form */
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+}
+
+.form-field label {
+    font-size: 14px;
+    font-weight: 600;
+    color: $color-text-primary;
+}
+
+.form-field input {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 44px;
+    padding: 0 $spacing-sm;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    background: $color-surface;
+    font-family: inherit;
+    font-size: 14px;
+    color: $color-text-primary;
+    outline: none;
+    transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-field input::placeholder {
+    color: $color-text-muted;
+}
+
+.form-field input:focus {
+    border-color: $color-primary;
+    box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* Forgot password */
+
+.login-options {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -$spacing-sm;
+}
+
+.login-options a {
+    font-size: 14px;
+    font-weight: 500;
+    color: $color-primary;
+    text-decoration: none;
+}
+
+.login-options a:hover {
+    color: $color-primary-hover;
+    text-decoration: underline;
+}
+
+/* Button */
+
+.login-button {
+    width: 100%;
+    min-height: 46px;
+    border: 0;
+    border-radius: $radius-sm;
+    background: $color-primary;
+    color: $color-surface;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+     cursor: pointer;
+    transition:
+    background 0.2s ease,
+    transform 0.1s ease;
+}
+
+.login-button:hover {
+    background: $color-primary-hover;
+}
+
+.login-button:active {
+    transform: translateY(1px);
+}
+
+/* Footer */
+
+.login-footer {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-xs;
+    margin-top: $spacing-lg;
+    font-size: 14px;
+    color: $color-text-secondary;
+}
+
+.login-footer a {
+    color: $color-primary;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-footer a:hover {
+    color: $color-primary-hover;
+    text-decoration: underline;
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+    .login-page {
+        padding: $spacing-md;
+    }
+
+    .login-card {
+        padding: $spacing-xl $spacing-md;
+        border: 0;
+        box-shadow: none;
+        background: transparent;
+    }
+
+    .login-brand {
+        margin-bottom: $spacing-xl;
+    }
+
+    .login-header h1 {
+        font-size: 26px;
+    }
+}

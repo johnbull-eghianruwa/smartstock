@@ -1,0 +1,79 @@
+<div class="login-page">
+
+    <div class="login-card">
+
+<!=============== Brand ===============>
+        <div class="login-brand">
+            <div class="login-brand__logo">SS</div>
+            <span class="login-brand__name">
+                SmartStock
+            </span>
+        </div>
+
+<!=============== Heading ==============>
+        <div class="login-header">
+            <h1>Welcome back</h1>
+            <p>
+                Sign in to your SmartStock account
+            </p>
+        </div>
+
+<!=============== Login form =============>
+        <form class="login-form">
+
+<!=============== Email ===============>
+            <div class="form-field">
+                <label for="email">
+                    Email address
+                </label>
+
+                <input
+                    id="email"
+                    type="email"
+                    placeholder="Enter your email"
+                    autocomplete="email"
+                />
+            </div>
+
+<!=============== Password ===============>
+            <div class="form-field">
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    id="password"
+                    type="password"
+                    placeholder="Enter your password"
+                    autocomplete="current-password"
+                />
+            </div>
+<!=============== Forgot password ===============>
+            <div class="login-options">
+                <a routerLink="/forgot-password">
+                    Forgot password?
+                </a>
+            </div>
+
+<!=============== Submit button ===============>
+            <button
+                type="submit"
+                class="login-button"
+            >
+                Sign in
+            </button>
+
+        </form>
+
+<!=============== Register ===============>
+        <div class="login-footer">
+            <span>Don't have an account?</span>
+
+            <a routerLink="/register">
+                Create account
+            </a>
+        </div>
+
+    </div>
+
+</div>
