@@ -1,0 +1,31 @@
+@use "../../../styles/variables" as *;
+
+.app-shell {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: $color-background;
+}
+
+.app-body {
+    flex: 1;
+    display: flex;
+    min-height: 0;
+    position: relative;
+}
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
+    padding: $spacing-lg;
+    overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+
+  .main-content {
+    padding: $spacing-md;
+  }
+
+}

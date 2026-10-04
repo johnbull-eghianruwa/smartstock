@@ -1,0 +1,51 @@
+<header class="topbar">
+
+<!============== Mobile menu button ==============>
+    <button
+        class="topbar__menu-button"
+        type="button"
+        aria-label="Open navigation menu"
+        (click)="onMenuToggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+
+<!============== Page title ==============>
+    <div class="topbar__title">
+        <h1>Dashboard</h1>
+    </div>
+
+<!============== Right-side actions ==============>
+    <div class="topbar__actions">
+
+<!============== Search ==============>
+        <button
+            class="topbar__action"
+            type="button"
+            aria-label="Search">
+            <mat-icon>search</mat-icon>
+        </button>
+
+<!============== Notifications ==============>
+        <button
+            class="topbar__action"
+            type="button"
+            aria-label="Notifications">
+            <mat-icon>notifications</mat-icon>
+        </button>
+
+<!=============== User profile ==============>
+        <button
+            class="topbar__profile"
+            type="button"
+            aria-label="User profile">
+            <span class="topbar__avatar">
+                JB
+            </span>
+            <span class="topbar__user">
+                <span class="topbar__user-name">Johnbull</span>
+                <span class="topbar__user-role">Administrator</span>
+            </span>
+            <mat-icon>expand_more</mat-icon>
+        </button>
+    </div>
+</header>
