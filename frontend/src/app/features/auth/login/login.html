@@ -19,7 +19,12 @@
         </div>
 
 <!=============== Login form =============>
-        <form class="login-form">
+        <form
+            class="login-form"
+            [formGroup]="loginForm"
+            (ngSubmit)="onSubmit()"
+
+        >
 
 <!=============== Email ===============>
             <div class="form-field">
@@ -30,9 +35,20 @@
                 <input
                     id="email"
                     type="email"
+                    formControlName="email"
                     placeholder="Enter your email"
                     autocomplete="email"
                 />
+                @if (loginForm.controls.email.touched && loginForm.controls.email.hasError('required')) {
+                    <small class="form-error">
+                        Email address is required.
+                    </small>
+                }
+                @if (loginForm.controls.email.touched && loginForm.controls.email.hasError('email')) {
+                    <small class="form-error">
+                        Please enter a valid email address.
+                    </small>
+                }
             </div>
 
 <!=============== Password ===============>
@@ -44,10 +60,17 @@
                 <input
                     id="password"
                     type="password"
+                    formControlName="password"
                     placeholder="Enter your password"
                     autocomplete="current-password"
                 />
+                 @if (loginForm.controls.password.touched && loginForm.controls.password.hasError('required')) {
+                    <small class="form-error">
+                        Password is required.
+                    </small>
+                }
             </div>
+            
 <!=============== Forgot password ===============>
             <div class="login-options">
                 <a routerLink="/forgot-password">
@@ -59,6 +82,7 @@
             <button
                 type="submit"
                 class="login-button"
+                [disabled]="loginForm.invalid"
             >
                 Sign in
             </button>

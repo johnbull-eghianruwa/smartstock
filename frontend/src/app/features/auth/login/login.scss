@@ -159,6 +159,10 @@
 .login-button:active {
     transform: translateY(1px);
 }
+.login-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
 
 /* Footer */
 
@@ -180,6 +184,12 @@
 .login-footer a:hover {
     color: $color-primary-hover;
     text-decoration: underline;
+}
+
+.form-error {
+  color: $color-danger;
+  font-size: 13px;
+  line-height: 1.4;
 }
 
 /* Mobile */
