@@ -164,6 +164,51 @@
   cursor: not-allowed;
 }
 
+.password-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-input-wrapper input {
+  padding-right: 44px;
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: $spacing-sm;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  padding: 0;
+
+  transform: translateY(-50%);
+
+  border: 0;
+  border-radius: $radius-sm;
+
+  background: transparent;
+  color: $color-text-secondary;
+
+  cursor: pointer;
+}
+
+.password-toggle:hover {
+  color: $color-text-primary;
+  background: $color-background;
+}
+
+.password-toggle mat-icon {
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+
 /* Footer */
 
 .login-footer {

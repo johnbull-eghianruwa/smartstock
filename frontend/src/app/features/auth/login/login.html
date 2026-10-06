@@ -53,22 +53,52 @@
 
 <!=============== Password ===============>
             <div class="form-field">
+
                 <label for="password">
                     Password
                 </label>
 
-                <input
-                    id="password"
-                    type="password"
-                    formControlName="password"
-                    placeholder="Enter your password"
-                    autocomplete="current-password"
-                />
-                 @if (loginForm.controls.password.touched && loginForm.controls.password.hasError('required')) {
+                <div class="password-input-wrapper">
+
+                    <input
+                        id="password"
+                        [type]="passwordVisible ? 'text' : 'password'"
+                        formControlName="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                    />
+
+                    <button
+                        type="button"
+                        class="password-toggle"
+                        (click)="togglePasswordVisibility()"
+                        [attr.aria-label]="passwordVisible ? 'Hide password' : 'Show password'"
+                    >
+                        <mat-icon>
+                            {{ passwordVisible ? 'visibility_off' : 'visibility' }}
+                        </mat-icon>
+                    </button>
+
+                </div>
+
+                @if (
+                    loginForm.controls.password.touched &&
+                    loginForm.controls.password.hasError('required')
+                ) {
                     <small class="form-error">
                         Password is required.
                     </small>
                 }
+
+                @if (
+                    loginForm.controls.password.touched &&
+                    loginForm.controls.password.hasError('minlength')
+                ) {
+                    <small class="form-error">
+                        Password must be at least 8 characters.
+                    </small>
+                }
+
             </div>
             
 <!=============== Forgot password ===============>
