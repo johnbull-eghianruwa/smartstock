@@ -8,10 +8,28 @@ import {
 
 import { authenticateToken } from '../middleware/auth.middleware.js';
 
+import {
+  registerValidation,
+  loginValidation,
+  handleValidationErrors
+} from '../validators/auth.validators.js';
+
 const router = Router();
 
-router.post('/register', register);
-router.post('/login', login);
+router.post(
+  '/register',
+  registerValidation,
+  handleValidationErrors,
+  register
+);
+
+router.post(
+  '/login',
+  loginValidation,
+  handleValidationErrors,
+  login
+);
+
 router.get('/me', authenticateToken, getCurrentUser);
 
 export default router;

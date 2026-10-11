@@ -43,14 +43,27 @@ export const register = async (
       message: 'Account created successfully',
       data: result
     });
-  } catch (error) {
+    } catch (error) {
     if (
       error instanceof Error &&
       error.message === 'An account with this email already exists'
     ) {
       res.status(409).json({
         success: false,
-        message: error.message
+        message: 'An account with this email already exists'
+      });
+      return;
+    }
+
+    if (
+      typeof error === 'object' &&
+      error !== null &&
+      'code' in error &&
+      error.code === 11000
+    ) {
+      res.status(409).json({
+        success: false,
+        message: 'An account with this email already exists'
       });
       return;
     }
