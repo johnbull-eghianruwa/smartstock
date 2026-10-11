@@ -4,6 +4,10 @@ import dotenv from 'dotenv';
 
 import connectDatabase from './config/database.js';
 import authRoutes from './routes/auth.routes.js';
+import {
+  notFoundHandler,
+  errorHandler
+} from './middleware/error.middleware.js';
 
 dotenv.config();
 
@@ -25,6 +29,10 @@ app.get('/api/health', (_req, res) => {
 
 // Authentication routes
 app.use('/api/auth', authRoutes);
+
+// Register these after all valid routes
+app.use(notFoundHandler);
+app.use(errorHandler);
 
 // Start server
 const startServer = async (): Promise<void> => {
