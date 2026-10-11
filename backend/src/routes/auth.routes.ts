@@ -13,6 +13,7 @@ import {
   loginValidation,
   handleValidationErrors
 } from '../validators/auth.validators.js';
+import { loginRateLimiter } from '../middleware/rate-limit.middleware.js';
 
 const router = Router();
 
@@ -25,6 +26,7 @@ router.post(
 
 router.post(
   '/login',
+  loginRateLimiter,
   loginValidation,
   handleValidationErrors,
   login
