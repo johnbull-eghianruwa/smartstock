@@ -32,7 +32,9 @@ export const authenticateToken = (
   }
 
   try {
-    const decoded = jwt.verify(token, secret);
+    const decoded = jwt.verify(token, secret, {
+  algorithms: ['HS256']
+});
 
     if (
       typeof decoded !== 'object' ||
