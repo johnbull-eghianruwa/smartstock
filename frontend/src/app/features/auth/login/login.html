@@ -109,13 +109,18 @@
             </div>
 
 <!=============== Submit button ===============>
+		@if (serverError) {
+ 			 <div class="server-error" role="alert">
+    				{{ serverError }}
+ 		 	</div>
+		}
             <button
-                type="submit"
-                class="login-button"
-                [disabled]="loginForm.invalid"
-            >
-                Sign in
-            </button>
+  type="submit"
+  class="login-button"
+  [disabled]="loginForm.invalid || isSubmitting"
+>
+  {{ isSubmitting ? 'Signing in...' : 'Sign in' }}
+</button>
 
         </form>
 
